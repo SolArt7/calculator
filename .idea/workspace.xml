@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bdb7c84a-b421-4f3f-8d58-ea88125feaf7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/money-savings.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/logo192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/logo512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/readme-task.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App.test.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/fonts/rambla/rambla-bold-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/fonts/rambla/rambla-bold-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/fonts/rambla/rambla-bold-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/fonts/rambla/rambla-regular-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/fonts/rambla/rambla-regular-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/fonts/rambla/rambla-regular-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/fonts/rambla/stylesheet.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/DateSwitcher/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Input/NumInput.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Input/index.style.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Input/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Label/index.style.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Label/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Toggler/index.style.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Toggler/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/const/theme/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/helpers/number.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/MoneySavings/index.style.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/MoneySavings/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/RootPage/index.style.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/RootPage/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-app-env.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/actions/theme.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/reducers/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/reducers/theme.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/serviceWorker.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/setupTests.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/typings/redux-logger.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1ZKd36xQzUwetDNJ5c279YTMSUW" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/assets/fonts/rambla" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="ts.external.directory.path" value="C:\Users\hound\Documents\Work\AppBoxo\money-savings\node_modules\typescript\lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\hound\Documents\Work\AppBoxo\money-savings\src\assets\fonts\rambla" />
+      <recent name="C:\Users\hound\Documents\Work\AppBoxo\money-savings\public\fonts\rambla" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\hound\Documents\Work\AppBoxo\money-savings\src\pages\InitPage" />
+      <recent name="C:\Users\hound\Documents\Work\AppBoxo\money-savings\src\pages\MoneySavings" />
+      <recent name="C:\Users\hound\Documents\Work\AppBoxo\money-savings\src\assets" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bdb7c84a-b421-4f3f-8d58-ea88125feaf7" name="Default Changelist" comment="" />
+      <created>1584591517033</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1584591517033</updated>
+      <workItem from="1584591518346" duration="2957000" />
+      <workItem from="1584594496608" duration="21308000" />
+      <workItem from="1584629633642" duration="49000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
