@@ -41,7 +41,7 @@ export default connector(styled((props: Props) => (
     };
     border-radius: 16px;
     position: absolute;
-    left: 2px;
+    left: 1px;
     top: 1px;
     transition: .07s;
     ${props => props.togglerState && css`

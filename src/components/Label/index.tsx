@@ -1,17 +1,37 @@
 import React from 'react';
-import StyledLabel from './index.style';
+import styled, {css} from 'styled-components'
+import {connect, ConnectedProps} from 'react-redux';
+import {RootState} from '../../redux/reducers';
 
-interface Props {
-  children?: JSX.Element | string
-  className?: string
+interface Props extends ConnectedProps<typeof connector> {
+  children?: React.ReactNodeArray | React.ReactNode
+  className?: string,
+  colored?: boolean
+  fw?: string // font-weight (normal)
+  fs?: string // font=size (14px)
+  lh?: string // line-height (17px)
 }
 
-const Label = (props: Props) => {
+const Label = styled((props: Props) => {
   return (
-    <StyledLabel {...props}>
+    <span className={props.className}>
       {props.children}
-    </StyledLabel>
+    </span>
   )
-};
+})`
+  display: inline-block;
+  font-size: ${props => props.fs || '14px'};
+  line-height: ${props => props.lh || '17px'};
+  font-weight: ${props => props.fw || 'normal'};
+  
+  ${props => props.colored && css`
+    color: ${props.theme.element.colors.bg.active}
+  `}
+  
+`;
 
-export default Label;
+const connector = connect((state: RootState) => ({
+  theme: state.Theme
+}), {});
+
+export default connector(Label);

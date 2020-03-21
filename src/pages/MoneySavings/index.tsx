@@ -1,14 +1,16 @@
 import React from 'react';
+import moment from 'moment';
 import StyledMoneySavings from './index.style';
 import Toggler from '../../components/Toggler';
 import NumInput from '../../components/Input/NumInput';
 import DateSwitcher from '../../components/DateSwitcher';
-import Label from '../../components/Label';
+import Block from '../../components/Block';
 import {calculateMonthly, calculateTotal} from '../../helpers/savings';
+import Total from "./Total";
 
-type Modes = 'total' | 'monthly'
+export type Modes = 'total' | 'monthly'
 
-const titles: {[key: string]: {[key in Modes]: string}} = {
+export const titles: {[key: string]: {[key in Modes]: string}} = {
   amount: {
     total: 'Calculate by total amount',
     monthly: 'Calculate by monthly saving'
@@ -18,72 +20,76 @@ const titles: {[key: string]: {[key in Modes]: string}} = {
     monthly: 'Save until '
   },
   title: {
+    total: 'Total amount',
+    monthly: 'Monthly amount'
+  },
+  total: {
     total: 'Monthly amount',
     monthly: 'Total amount'
   }
 };
 
+export interface MoneySavingsState {
+  mode: Modes,
+  amount: number,
+  date: Date,
+  total: number
+}
+
 class MoneySavings extends React.Component {
-  state: {mode: Modes, amount: number, date: Date, total: number} = {
+  state: MoneySavingsState = {
     mode: 'monthly',
     amount: 25000,
-    date: new Date(),
+    date: moment().add(1, 'M').toDate(),
     total: 0
   };
 
   componentDidMount() {
     this.setState({
       ...this.state,
-      total: this.calcSStrategy[this.state.mode](this.state.amount, this.state.date)
+      total: this.calcStrategy[this.state.mode](this.state.amount, this.state.date)
     })
   }
 
   render() {
     return (
       <StyledMoneySavings>
-        <div className='container-item'>
+        <Block p='0 0 20px 0'>
           <div className='title'>
             <p>Savings</p>
             <p>calculator</p>
           </div>
-        </div>
-        <div className='container-item'>
+        </Block>
+        <Block p='0 0 20px 0'>
           <Toggler
             handleChange={this.handleTogglerChange}
             label={titles.amount[this.state.mode]}
           />
-        </div>
-        <div className='container-item'>
+        </Block>
+        <Block p='0 0 20px 0'>
           <NumInput
             label={titles.title[this.state.mode]}
             startAdornment={{content: '$'}}
             value={this.state.amount}
             handleNumChange={this.handleNumInputChange}
           />
-        </div>
-        <div className='container-item'>
+        </Block>
+        <Block p='0 0 20px 0'>
           <DateSwitcher
             label={titles.date[this.state.mode]}
             value={this.state.date.toISOString()}
             handleChange={this.handleDateChange}
+            dateBorder={moment().add(1, 'M').toDate()}
           />
-        </div>
-        <div className='container-item'>
-          <div className='block'>
-            <div className='block-inner custom'>
-              <Label>{titles.title[this.state.mode]}</Label>
-              <h1>${this.state.total}</h1>
-            </div>
-            <div className='block-inner colored'>
-              <Label>You are planning  26 monthly deposits to reach your $25, 000 goal by April 2022.</Label>
-            </div>
-          </div>
-        </div>
+        </Block>
+
+        <Total {...this.state} />
+
       </StyledMoneySavings>
     )
   }
 
-  private calcSStrategy = {
+  private calcStrategy = {
     monthly: calculateMonthly,
     total: calculateTotal
   };
@@ -92,7 +98,7 @@ class MoneySavings extends React.Component {
     this.setState({
       ...this.state,
       date,
-      total: this.calcSStrategy[this.state.mode](this.state.amount, date)
+      total: this.calcStrategy[this.state.mode](this.state.amount, date)
     })
   };
 
@@ -100,15 +106,16 @@ class MoneySavings extends React.Component {
     this.setState({
       ...this.state,
       amount: val,
-      total: this.calcSStrategy[this.state.mode](val, this.state.date)
+      total: this.calcStrategy[this.state.mode](val, this.state.date)
     })
   };
 
   private handleTogglerChange = (state: boolean) => {
+    const mode = state ? 'total' : 'monthly';
     this.setState({
       ...this.state,
-      mode: state ? 'total' : 'monthly',
-      total: this.calcSStrategy[this.state.mode](this.state.amount, this.state.date)
+      mode: mode,
+      total: this.calcStrategy[mode](this.state.amount, this.state.date)
     })
   };
 }

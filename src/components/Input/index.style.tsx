@@ -15,6 +15,8 @@ const connector = connect((state: RootState) => ({
 export default connector(styled((props) => (
   <div className={props.className}>{props.children}</div>
 ))`
+  width: 100%;
+  
   .input-container {
     display: flex;
     width: 100%;
@@ -31,7 +33,7 @@ export default connector(styled((props) => (
   }
   
   .input {
-    width: 100%;
+    flex-grow: 1;
     border: 0;
     font-size: 18px;
     line-height: 22px;

@@ -37,6 +37,7 @@ export const defaultTheme: Theme = {
   block: {
     colors: {
       bg: '#FFFEFE',
+      border: '#CFCFCF',
 
     },
     shadows: {

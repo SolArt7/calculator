@@ -6,4 +6,4 @@ export const clearNumberWithCommas = (x: string | number) => {
   return x.toString().replace(/,/g, '');
 };
 
-export const numberRegexp = /^([0-9]*)$/;
+export const numberRegexp = /^(\d*\.?\d*)$/;

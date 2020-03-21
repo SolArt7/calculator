@@ -5,7 +5,8 @@ import moment, {Moment} from 'moment';
 interface Props {
   handleChange: (val: Date) => void
   value: string
-  label?: string
+  label?: string,
+  dateBorder?: Date
 }
 
 class DateSwitcher extends React.Component<Props> {
@@ -35,7 +36,7 @@ class DateSwitcher extends React.Component<Props> {
     const val = moment(this.props.value);
 
     // prevent clicking back
-    if (val.isAfter(new Date())) {
+    if (val.isAfter(this.props.dateBorder || new Date())) {
       this.props.handleChange(val.subtract(1, 'M').toDate());
     }
   };
