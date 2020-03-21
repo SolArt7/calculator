@@ -1,9 +1,10 @@
 import React from 'react';
-import moment from 'moment';
 import StyledMoneySavings from './index.style';
 import Toggler from '../../components/Toggler';
 import NumInput from '../../components/Input/NumInput';
 import DateSwitcher from '../../components/DateSwitcher';
+import Label from '../../components/Label';
+import {calculateMonthly, calculateTotal} from '../../helpers/savings';
 
 type Modes = 'total' | 'monthly'
 
@@ -30,79 +31,85 @@ class MoneySavings extends React.Component {
     total: 0
   };
 
+  componentDidMount() {
+    this.setState({
+      ...this.state,
+      total: this.calcSStrategy[this.state.mode](this.state.amount, this.state.date)
+    })
+  }
+
   render() {
     return (
       <StyledMoneySavings>
-        <div className='title'>
-          <p>Savings</p>
-          <p>calculator</p>
+        <div className='container-item'>
+          <div className='title'>
+            <p>Savings</p>
+            <p>calculator</p>
+          </div>
         </div>
-        <div className='components'>
+        <div className='container-item'>
           <Toggler
             handleChange={this.handleTogglerChange}
             label={titles.amount[this.state.mode]}
           />
+        </div>
+        <div className='container-item'>
           <NumInput
             label={titles.title[this.state.mode]}
             startAdornment={{content: '$'}}
             value={this.state.amount}
-            handleChange={this.handleNumInputChange}
+            handleNumChange={this.handleNumInputChange}
           />
+        </div>
+        <div className='container-item'>
           <DateSwitcher
             label={titles.date[this.state.mode]}
             value={this.state.date.toISOString()}
             handleChange={this.handleDateChange}
           />
         </div>
+        <div className='container-item'>
+          <div className='block'>
+            <div className='block-inner custom'>
+              <Label>{titles.title[this.state.mode]}</Label>
+              <h1>${this.state.total}</h1>
+            </div>
+            <div className='block-inner colored'>
+              <Label>You are planning  26 monthly deposits to reach your $25, 000 goal by April 2022.</Label>
+            </div>
+          </div>
+        </div>
       </StyledMoneySavings>
     )
   }
 
-  private handleDateChange = (date: Date) => {
-    this.calculateAmountStrategy[this.state.mode](this.state.amount, date);
+  private calcSStrategy = {
+    monthly: calculateMonthly,
+    total: calculateTotal
+  };
 
+  private handleDateChange = (date: Date) => {
     this.setState({
       ...this.state,
-      date
+      date,
+      total: this.calcSStrategy[this.state.mode](this.state.amount, date)
     })
   };
 
-  private handleNumInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    this.calculateAmountStrategy[this.state.mode](e.target.value, this.state.date);
-
+  private handleNumInputChange = (val: number) => {
     this.setState({
       ...this.state,
-      amount: e.target.value
+      amount: val,
+      total: this.calcSStrategy[this.state.mode](val, this.state.date)
     })
   };
 
   private handleTogglerChange = (state: boolean) => {
-
     this.setState({
-      mode: state ? 'total' : 'monthly'
+      ...this.state,
+      mode: state ? 'total' : 'monthly',
+      total: this.calcSStrategy[this.state.mode](this.state.amount, this.state.date)
     })
-  };
-
-  private calculateMonthly = (amount: string | number, date: Date) => {
-    const months = Math.ceil(moment(date).diff(moment(), 'M', true));
-    this.setState({
-      ...this.state,
-      total: (Number(amount) * months).toFixed(2)
-    });
-    console.log(this.state)
-  };
-  private calculateTotal = (amount: string | number, date: Date) => {
-    const months = Math.ceil(moment(date).diff(moment(), 'M', true));
-    this.setState({
-      ...this.state,
-      total: (Number(amount) / months).toFixed(2)
-    });
-    console.log(this.state)
-  };
-
-  private calculateAmountStrategy = {
-    total: this.calculateTotal,
-    monthly: this.calculateMonthly
   };
 }
 

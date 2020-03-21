@@ -1,17 +1,19 @@
 import React from 'react';
 import styled, {css} from 'styled-components';
 import {connect, ConnectedProps} from 'react-redux';
-import {RootState} from "../../redux/reducers";
+import {RootState} from '../../redux/reducers';
 
-interface Props extends HTMLDivElement, ConnectedProps<typeof connector> {
-  togglerState: boolean
+interface Props extends ConnectedProps<typeof connector> {
+  togglerState: boolean,
+  className?: string
+  children?: React.ReactNode | React.ReactNodeArray
 }
 
 const connector = connect((state: RootState) => ({
   theme: state.Theme
 }), {});
 
-export default connector(styled((props) => (
+export default connector(styled((props: Props) => (
   <div className={props.className}>
     {props.children}
   </div>
@@ -39,7 +41,7 @@ export default connector(styled((props) => (
     };
     border-radius: 16px;
     position: absolute;
-    left: 1px;
+    left: 2px;
     top: 1px;
     transition: .07s;
     ${props => props.togglerState && css`

@@ -33,12 +33,34 @@ export default connector(styled((props) => (
      padding: 45px;
   }
   
+  .container-item {
+    padding-bottom: 20px;
+  }
+  
   .title {
     font-size: 30px;
     line-height: 37px;
   }
   
-  .components {
-    padding-top: 20px;
+  .block {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid ${props => props.theme.element.colors.border}; 
+    border-radius: ${props => props.theme.block.radiuses.main};
+    
+    &-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 10px 25px;
+      
+      &.custom {
+        min-height: 100px;
+      }
+      &.colored {
+         background: ${props => props.theme.global.colors.bg};
+      }
+    }
   }
 `)

@@ -2,7 +2,9 @@ import React from 'react'
 import Input, {Props as InputProps} from './index';
 import {clearNumberWithCommas, numberWithCommas, numberRegexp} from '../../helpers/number'
 
-interface Props extends InputProps {}
+interface Props extends InputProps {
+  handleNumChange: (val: number) => void
+}
 
 class NumInput extends React.Component<Props> {
   state = {
@@ -25,7 +27,7 @@ class NumInput extends React.Component<Props> {
       this.setState({
         val
       });
-      this.props.handleChange && this.props.handleChange(e)
+      this.props.handleNumChange && this.props.handleNumChange(Number(val))
     }
   };
 }
