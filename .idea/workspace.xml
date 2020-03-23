@@ -1,26 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bdb7c84a-b421-4f3f-8d58-ea88125feaf7" name="Default Changelist" comment="Tests, styling">
-      <change afterPath="$PROJECT_DIR$/src/components/Button/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/DateSwitcher/index.test.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/MoneySavings/index.test.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/typings/enzyme-adapter-react-16.d.ts" afterDir="false" />
+    <list default="true" id="bdb7c84a-b421-4f3f-8d58-ea88125feaf7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/fonts/rambla/stylesheet.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Block/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Block/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DateSwitcher/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DateSwitcher/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/const/theme/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/const/theme/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/MoneySavings/Total.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MoneySavings/Total.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/MoneySavings/index.style.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MoneySavings/index.style.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helpers/number.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/number.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/MoneySavings/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MoneySavings/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/RootPage/index.style.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/RootPage/index.style.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/actions/theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actions/theme.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/reducers/theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/theme.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setupTests.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/setupTests.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app-env.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app-env.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/serviceWorker.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/serviceWorker.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -164,7 +151,7 @@
       <workItem from="1584629633642" duration="169000" />
       <workItem from="1584773824659" duration="213000" />
       <workItem from="1584774057073" duration="13029000" />
-      <workItem from="1584935227895" duration="16412000" />
+      <workItem from="1584935227895" duration="17099000" />
     </task>
     <task id="LOCAL-00001" summary="Designs + logic">
       <created>1584629767264</created>
@@ -180,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584789354055</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Tests, styling">
+      <created>1584962668032</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1584962668032</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,6 +196,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Designs + logic" />
     <MESSAGE value="Logic is complete, better design handling is left" />
-    <option name="LAST_COMMIT_MESSAGE" value="Logic is complete, better design handling is left" />
+    <MESSAGE value="Tests, styling" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tests, styling" />
   </component>
 </project>

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, {css} from 'styled-components';
 import {connect, ConnectedProps} from 'react-redux';
-import {RootState} from "../../redux/reducers";
+import {RootState} from '../../redux/reducers';
 
 interface Props extends ConnectedProps<typeof connector> {
   className?: string
@@ -28,6 +28,8 @@ interface Props extends ConnectedProps<typeof connector> {
   bordered?: boolean // add border with border radius (false)
   shadowed?: boolean // add shadows (false)
 
+  overflow?: string // (auto)
+
 }
 
 const Block = styled((props: Props) => {
@@ -35,7 +37,7 @@ const Block = styled((props: Props) => {
     <div className={props.className}>{props.children}</div>
   )
 })`
-  overflow: auto;
+  overflow: ${props => props.overflow || 'auto'};
 
   display: ${props => props.display || 'flex'};
   

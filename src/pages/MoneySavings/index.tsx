@@ -56,7 +56,13 @@ class MoneySavings extends React.Component {
   render() {
     return (
       <StyledMoneySavings>
-        <div>
+        <Block
+          fd='column'
+          minW='380px'
+          maxW='50%'
+          w='400px'
+          overflow='visible'
+        >
           <Block
             className='header'
             p='0 0 15px 0'
@@ -75,9 +81,6 @@ class MoneySavings extends React.Component {
           </Block>
           <Block
             className='container'
-            w='400px'
-            minW='400px'
-            maxW='50%'
             p='45px'
             fd='column'
             shadowed
@@ -119,7 +122,7 @@ class MoneySavings extends React.Component {
               <Button colored>Finish</Button>
             </Block>
           </Block>
-        </div>
+        </Block>
       </StyledMoneySavings>
     )
   }
