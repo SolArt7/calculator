@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import {connect, ConnectedProps} from 'react-redux';
 import {RootState} from '../../redux/reducers';
-import Block from '../../components/Block';
 
 interface Props extends ConnectedProps<typeof connector> {
 }
@@ -13,17 +12,7 @@ const connector = connect((state: RootState) => ({
 
 export default connector(styled((props) => (
   <div className={props.className}>
-    <Block
-      className='container'
-      w='400px'
-      maxW='50%'
-      minW='320px'
-      p='45px'
-      fd='column'
-      shadowed
-    >
-      {props.children}
-    </Block>
+    {props.children}
   </div>
 ))`
   width: 100%;
@@ -33,6 +22,19 @@ export default connector(styled((props) => (
   align-items: center;
   justify-content: center;
   
+  .header {
+    .back-btn {
+      padding: 20px;
+      
+      &-container {
+        flex-grow: 0.8;
+      }
+    }
+    &-title {
+      flex-grow: 1;
+    }
+  }
+   
   .container {
      background: ${props => props.theme.block.colors.bg};
   }

@@ -9,7 +9,7 @@ interface Props {
   dateBorder?: Date
 }
 
-class DateSwitcher extends React.Component<Props> {
+export class DateSwitcher extends React.Component<Props> {
   render() {
     return (
       <Input

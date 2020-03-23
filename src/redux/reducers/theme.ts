@@ -1,15 +1,18 @@
 import {defaultTheme} from '../../const/theme';
 
-export default (state = defaultTheme, action: any) => {
-  switch (action.type) {
+interface Action {
+  type: string
+  payload?: any
+  error?: any
+}
 
+export default (state = defaultTheme, action: Action) => {
+  switch (action.type) {
     case 'SET_THEME':
       return {
         ...state,
+        theme: action.payload
       };
-
-    case 'SWTCH_THEME':
-      return state;
 
     default:
       return state

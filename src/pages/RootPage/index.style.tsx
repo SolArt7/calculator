@@ -6,6 +6,7 @@ export default styled((props) => (
     {props.children}
   </div>
 ))`
-  font-family: ${props => props.theme.global.fonts.main};
-  color: ${props => props.theme.global.colors.color};
+  * {
+    font-family: ${props => props.theme.global.fonts.main};
+  }
 `;

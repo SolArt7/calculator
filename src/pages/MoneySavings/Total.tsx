@@ -12,14 +12,19 @@ const Total = (props: MoneySavingsState) => {
       <Block fd='column' bordered>
         <div className='block-inner custom'>
           <Label>{titles.total[props.mode]}</Label>
-          <Label
-            fs='24px'
-            lh='29px'
-            fw='600'
-            colored
+          <Block
+            maxW='130px'
+            jc='flex-end'
           >
-            ${renderTotalStrategy[props.mode](props.total)}
-          </Label>
+            <Label
+              fs='24px'
+              lh='29px'
+              fw='600'
+              colored
+            >
+              ${renderTotalStrategy[props.mode](props.total)}
+            </Label>
+          </Block>
         </div>
         <div className='block-inner colored'>
           <Label
@@ -27,7 +32,22 @@ const Total = (props: MoneySavingsState) => {
             lh='14px'
 
           >
-            {renderSubTotalStrategy[props.mode](props)}
+            {
+              props.mode === 'total' &&
+              <span>
+                You are planning <b>{String(getMonthsDiff(props.date))} monthly</b> deposits to reach your
+                <b> ${renderTotalStrategy.monthly(props.amount)}</b> goal by
+                <b> {moment(props.date).format('MMMM YYYY')}</b>.
+              </span>
+            }
+            {
+              props.mode === 'monthly' &&
+              <span>
+                You are saving <b>${renderTotalStrategy.total(props.amount)}</b> monthly to save
+                <b> ${renderTotalStrategy.monthly(props.total)}</b> by
+                <b> {moment(props.date).format('MMMM YYYY')}</b>.
+              </span>
+            }
           </Label>
         </div>
       </Block>
@@ -35,33 +55,9 @@ const Total = (props: MoneySavingsState) => {
   )
 };
 
-const subtotal = {
-  total: 'You are planning [months] monthly deposits to reach your $[total] goal by [date].',
-  monthly: 'You are saving $[amount] monthly to save $[total] by [date].'
-};
-
 const renderTotalStrategy: {[Key in Modes]: (val: number) => string} = {
   monthly: numberWithCommas,
   total: (val: number): string => val.toFixed(2)
-};
-
-const renderTotal = (props: MoneySavingsState): string => {
-  return subtotal.total
-    .replace('[months]', String(getMonthsDiff(props.date)))
-    .replace('[total]', renderTotalStrategy.monthly(props.total))
-    .replace('[date]', moment(props.date).format('MMMM YYYY'))
-};
-
-const renderMonthly = (props: MoneySavingsState): string => {
-  return subtotal.monthly
-    .replace('[amount]', renderTotalStrategy.total(props.amount))
-    .replace('[total]', renderTotalStrategy.monthly(props.total))
-    .replace('[date]', moment(props.date).format('MMMM YYYY'))
-};
-
-const renderSubTotalStrategy = {
-  monthly: renderMonthly,
-  total: renderTotal
 };
 
 export default Total;

@@ -54,7 +54,8 @@ export const defaultTheme: Theme = {
       bg: {
         active: '#2F80ED',
         disabled: '#CFCFCF'
-      }
+      },
+      color: '#F2F2F2'
     }
   },
 };

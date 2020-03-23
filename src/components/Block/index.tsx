@@ -35,6 +35,8 @@ const Block = styled((props: Props) => {
     <div className={props.className}>{props.children}</div>
   )
 })`
+  overflow: auto;
+
   display: ${props => props.display || 'flex'};
   
   align-items: ${props => props.ai || 'flex-start'};
@@ -60,7 +62,7 @@ const Block = styled((props: Props) => {
   `}
   
   ${props => props.shadowed && css`
-    border: 1px solid ${props.theme.block.shadows.main}
+    box-shadow: ${props.theme.block.shadows.main};
   `}
 `;
 
